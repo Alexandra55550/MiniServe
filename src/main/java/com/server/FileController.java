@@ -35,7 +35,7 @@ public class FileController {
         model.addAttribute("disponible", true);
 
         model.addAttribute("descripcion", "Aplicación Android institucional - Permite gestionar procesos desde dispositivos móviles.");
-        model.addAttribute("imagen", "android.png");
+        model.addAttribute("imagen", "/uploads/android/android.png");
 
         return "android";
     }
@@ -51,7 +51,7 @@ public class FileController {
         model.addAttribute("disponible", true);
 
         model.addAttribute("descripcion", "Sistema de Gestión de Incapacidad de Docentes - Permite administrar incapacidades y generar reportes institucionales.");
-        model.addAttribute("imagen", "programa.png");
+        model.addAttribute("imagen", "/uploads/escritorio/programa.png");
 
         return "escritorio";
     }
