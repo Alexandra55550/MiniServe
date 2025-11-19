@@ -24,9 +24,16 @@ public class FileController {
     private static final String DEFAULT_ESCRITORIO = "Biblioteca.exe";
 
     @GetMapping("/")
-    public String home() {
+    public String home(Model model) {
+        model.addAttribute("tipo", "android");
+        model.addAttribute("nombreVisible", "Aplicación Android - prácticaApp");
+        model.addAttribute("nombrePrograma", DEFAULT_ANDROID);
+        model.addAttribute("disponible", true);
+        model.addAttribute("descripcion", "Aplicación Android institucional - Permite gestionar procesos desde dispositivos móviles.");
+        model.addAttribute("imagen", "/uploads/android/android.png");
         return "index";
     }
+
 
     @GetMapping("/android")
     public String android(Model model) {
@@ -34,6 +41,7 @@ public class FileController {
         model.addAttribute("nombreVisible", "Aplicación Android - prácticaApp");
         model.addAttribute("nombrePrograma", DEFAULT_ANDROID);
         model.addAttribute("disponible", true);
+        //Descripcion
         model.addAttribute("descripcion", "Aplicación Android institucional - Permite gestionar procesos desde dispositivos móviles.");
         model.addAttribute("imagen", "/uploads/android/android.png");
         return "android";
@@ -45,6 +53,7 @@ public class FileController {
         model.addAttribute("nombreVisible", "Aplicación de Escritorio - Biblioteca");
         model.addAttribute("nombrePrograma", DEFAULT_ESCRITORIO);
         model.addAttribute("disponible", true);
+        //descripcion
         model.addAttribute("descripcion", "Sistema de Gestión de Biblioteca - Permite administrar libros, usuarios y préstamos.");
         model.addAttribute("imagen", "/uploads/escritorio/programa.png");
         return "escritorio";
